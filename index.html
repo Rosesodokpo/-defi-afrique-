@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -182,4 +181,13 @@ function guessFlag(q){return "🚩"}
 function startTimer(){clearInterval(timer);timeLeft=15;document.getElementById("timer").textContent=timeLeft;timer=setInterval(()=>{timeLeft--;document.getElementById("timer").textContent=timeLeft;if(timeLeft<=0){clearInterval(timer);answer(-1)}},1000)}
 function answer(i){if(answered)return;answered=true;clearInterval(timer);let q=currentQuestions[currentIndex],buttons=document.querySelectorAll(".answer");buttons.forEach((b,j)=>{if(j===q[2])b.classList.add("correct");if(j===i&&i!==q[2])b.classList.add("wrong")});if(i===q[2]){currentScore++;state.coins+=5;state.xp+=10;state.missions.q=true}else state.lives=Math.max(0,state.lives-1);save();setTimeout(()=>{currentIndex++;loadQuestion()},650)}
 function finish(){clearInterval(timer);let success=currentScore>=5;if(success){state.trophies++;state.coins+=20;state.xp+=40;state.missions.win=true;if(currentCategory==="tour"){state.completed=[...new Set([...state.completed,currentCountry])];state.unlocked=Math.max(state.unlocked,Math.min(countries.length,currentCountry+2))}else if(state.challengeLevels[currentCategory]){state.challengeCompleted[currentCategory]=[...new Set([...state.challengeCompleted[currentCategory],currentLevel])];state.challengeLevels[currentCategory]=Math.min(10,Math.max(state.challengeLevels[currentCategory],currentLevel+1))}}if(state.xp>=50)state.missions.xp=true;state.level=Math.floor(state.xp/100)+1;save();document.getElementById("resultTitle").textContent=success?"🎉 Défi réussi !":"💪 Continue !";document.getElementById("resultText").textContent=`Score : ${currentScore}/7${success?" — Nouveau niveau débloqué !":" — Il faut au moins 5/7."}`;show("result")}
-function replay(){if(currentCategory==="benin")startBe
+function replay(){if(currentCategory==="benin")startBenin();else if(currentCategory==="tour")startCountry(currentCountry);else startChallenge(currentCategory,currentLevel)}
+function quitGame(){if(currentCategory==="tour")show("tour");else if(["africa","intelligence","drapeaux","pays","capitales","culture"].includes(currentCategory))openLevels(currentCategory);else goHome()}
+function buyLife(){if(state.coins>=20){state.coins-=20;state.lives++;save()}else alert("Pas assez de pièces.");}
+function buyHint(){if(state.coins>=15){state.coins-=15;state.hints++;save()}else alert("Pas assez de pièces.");}
+function buyLives(){if(state.coins>=50){state.coins-=50;state.lives+=3;save()}else alert("Pas assez de pièces.");}
+function setAvatar(a){state.avatar=a;save()}
+updateUI();
+</script>
+</body>
+</html>
