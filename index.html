@@ -187,7 +187,19 @@ function buyLife(){if(state.coins>=20){state.coins-=20;state.lives++;save()}else
 function buyHint(){if(state.coins>=15){state.coins-=15;state.hints++;save()}else alert("Pas assez de pièces.");}
 function buyLives(){if(state.coins>=50){state.coins-=50;state.lives+=3;save()}else alert("Pas assez de pièces.");}
 function setAvatar(a){state.avatar=a;save()}
-updateUI();
+updateUI();window.show = show;
+window.goHome = goHome;
+window.startBenin = startBenin;
+window.startCountry = startCountry;
+window.startChallenge = startChallenge;
+window.openLevels = openLevels;
+window.answer = answer;
+window.replay = replay;
+window.quitGame = quitGame;
+window.buyLife = buyLife;
+window.buyHint = buyHint;
+window.buyLives = buyLives;
+window.setAvatar = setAvatar;
 </script>
 </body>
 </html>
