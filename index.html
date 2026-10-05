@@ -3,203 +3,1489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Défi Afrique +</title>
+<title>Défi Afrique + V2</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(160deg,#032f25,#075e54 48%,#d4a600);min-height:100vh;color:#fff}
-.app{max-width:520px;margin:auto;min-height:100vh;padding:14px 14px 30px}
-header{text-align:center;padding:10px 0 16px}
-header h1{margin:0;font-size:31px;letter-spacing:-.5px;text-shadow:0 3px 12px rgba(0,0,0,.25)}
-header div{font-size:14px;opacity:.9;margin-top:5px}
-h1{margin:0;font-size:32px}h2{margin:8px 0 14px}p{line-height:1.45}
-.card{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:18px;margin:12px 0;box-shadow:0 8px 25px rgba(0,0,0,.15)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
-.stat{background:rgba(0,0,0,.2);padding:10px 3px;border-radius:15px;text-align:center;font-size:13px;border:1px solid rgba(255,255,255,.12)}
-.stat span{display:block;font-size:20px;margin-bottom:2px}.stat b{display:block;font-size:17px}.stat small{display:block;font-size:10px;opacity:.72;margin-top:2px}
-button{width:100%;border:0;border-radius:14px;padding:14px;margin:6px 0;font-size:16px;font-weight:bold;background:#fff;color:#075e54;cursor:pointer;transition:transform .15s,box-shadow .15s}
-button:active{transform:scale(.97)}button.secondary{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.35)}
-button:disabled{opacity:.45}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid button{margin:0}
-.hidden{display:none}.country,.level{display:flex;align-items:center;justify-content:space-between;text-align:left;padding:12px;background:rgba(0,0,0,.16);border-radius:13px;margin:7px 0}
-.country button,.level button{width:auto;margin:0;padding:9px 12px}.flag{font-size:55px;text-align:center;margin:12px}
-.progress{height:10px;background:rgba(0,0,0,.25);border-radius:20px;overflow:hidden}.bar{height:100%;background:#facc15;width:0}
-.answer{text-align:left;background:#fff;color:#075e54}.answer.correct{background:#22c55e;color:#fff}.answer.wrong{background:#ef4444;color:#fff}
-.small{font-size:13px;opacity:.85}.center{text-align:center}.back{margin-bottom:10px}
 
-/* Accueil moderne */
-.hero{text-align:center;padding:8px 4px 10px}
-.hero-logo{width:76px;height:76px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;border-radius:24px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:43px;box-shadow:0 10px 28px rgba(0,0,0,.2)}
-.hero h2{font-size:25px;margin:4px 0 5px}
-.hero p{margin:0;font-size:14px;opacity:.9}
-.hero-badge{display:inline-block;margin-top:11px;padding:7px 11px;border-radius:999px;background:rgba(250,204,21,.2);border:1px solid rgba(250,204,21,.4);font-size:10px;font-weight:bold;letter-spacing:.5px}
-.welcome-card{padding:18px 15px}
-.welcome-card h2{font-size:21px;margin:2px 0 7px}
-.welcome-card>p{font-size:13px;opacity:.88;margin:0 4px 12px}
-.main-start{background:linear-gradient(135deg,#fff,#f5f5f5);font-size:17px;padding:16px;margin:4px 0 16px;box-shadow:0 8px 22px rgba(0,0,0,.2)}
-.main-start:active{transform:scale(.97)}
-.home-section-title{text-align:left;font-size:10px;font-weight:bold;letter-spacing:1px;opacity:.7;margin:4px 3px 7px}
-.home-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.home-actions button{margin:0;text-align:left;padding:13px 11px;background:rgba(255,255,255,.11);color:#fff;border:1px solid rgba(255,255,255,.18);min-height:91px}
-.home-actions span{display:block;font-size:25px;margin-bottom:7px}
-.home-actions b{display:block;font-size:13px}
-.home-actions small{display:block;font-size:10px;opacity:.7;margin-top:3px;font-weight:normal}
-.home-footer{text-align:center;font-size:10px;opacity:.6;margin:15px 0 0}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(160deg,#032f25,#075e54 48%,#d4a600);
+min-height:100vh;
+color:#fff;
+overflow-x:hidden
+}
+
+.app{
+max-width:520px;
+margin:auto;
+min-height:100vh;
+padding:14px 14px 30px
+}
+
+header{text-align:center;padding:10px 0 16px}
+
+header h1{
+margin:0;
+font-size:31px;
+text-shadow:0 3px 12px rgba(0,0,0,.25)
+}
+
+header div{
+font-size:14px;
+opacity:.9;
+margin-top:5px
+}
+
+.card{
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.22);
+border-radius:20px;
+padding:18px;
+margin:12px 0;
+box-shadow:0 8px 25px rgba(0,0,0,.15)
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-bottom:14px
+}
+
+.stat{
+background:rgba(0,0,0,.2);
+padding:10px 3px;
+border-radius:15px;
+text-align:center;
+font-size:13px
+}
+
+.stat span{
+display:block;
+font-size:20px
+}
+
+.stat b{
+display:block;
+font-size:17px
+}
+
+.stat small{
+display:block;
+font-size:10px;
+opacity:.72
+}
+
+button{
+width:100%;
+border:0;
+border-radius:14px;
+padding:14px;
+margin:6px 0;
+font-size:16px;
+font-weight:bold;
+background:#fff;
+color:#075e54;
+cursor:pointer;
+transition:.15s
+}
+
+button:active{
+transform:scale(.96)
+}
+
+button.secondary{
+background:rgba(255,255,255,.18);
+color:#fff;
+border:1px solid rgba(255,255,255,.35)
+}
+
+button:disabled{opacity:.45}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px
+}
+
+.grid button{margin:0}
+
+.hidden{display:none}
+
+.country,.level{
+display:flex;
+align-items:center;
+justify-content:space-between;
+text-align:left;
+padding:12px;
+background:rgba(0,0,0,.16);
+border-radius:13px;
+margin:7px 0
+}
+
+.country button,.level button{
+width:auto;
+margin:0;
+padding:9px 12px
+}
+
+.flag{
+font-size:55px;
+text-align:center;
+margin:12px
+}
+
+.progress{
+height:10px;
+background:rgba(0,0,0,.25);
+border-radius:20px;
+overflow:hidden
+}
+
+.bar{
+height:100%;
+background:#facc15;
+width:0;
+transition:width .35s
+}
+
+.answer{
+text-align:left;
+background:#fff;
+color:#075e54;
+animation:appear .25s ease
+}
+
+.answer.correct{
+background:#22c55e;
+color:#fff;
+animation:correct .35s
+}
+
+.answer.wrong{
+background:#ef4444;
+color:#fff;
+animation:wrong .35s
+}
+
+.small{
+font-size:13px;
+opacity:.85
+}
+
+.center{text-align:center}
+
+.back{margin-bottom:10px}
+
+.hero{
+text-align:center;
+padding:8px 4px 10px
+}
+
+.hero-logo{
+width:80px;
+height:80px;
+margin:0 auto 8px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:25px;
+background:rgba(255,255,255,.16);
+border:1px solid rgba(255,255,255,.28);
+font-size:45px;
+box-shadow:0 10px 28px rgba(0,0,0,.2);
+animation:float 2.5s infinite ease-in-out
+}
+
+.hero h2{
+font-size:25px;
+margin:4px 0 5px
+}
+
+.hero p{
+margin:0;
+font-size:14px;
+opacity:.9
+}
+
+.hero-badge{
+display:inline-block;
+margin-top:11px;
+padding:7px 11px;
+border-radius:999px;
+background:rgba(250,204,21,.2);
+border:1px solid rgba(250,204,21,.4);
+font-size:10px;
+font-weight:bold
+}
+
+.welcome-card{
+padding:18px 15px
+}
+
+.main-start{
+font-size:17px;
+padding:16px;
+box-shadow:0 8px 22px rgba(0,0,0,.2)
+}
+
+.home-section-title{
+text-align:left;
+font-size:10px;
+font-weight:bold;
+letter-spacing:1px;
+opacity:.7;
+margin:4px 3px 7px
+}
+
+.home-actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-bottom:12px
+}
+
+.home-actions button{
+margin:0;
+text-align:left;
+padding:13px 11px;
+background:rgba(255,255,255,.11);
+color:#fff;
+border:1px solid rgba(255,255,255,.18);
+min-height:91px
+}
+
+.home-actions span{
+display:block;
+font-size:25px;
+margin-bottom:7px
+}
+
+.home-actions b{
+display:block;
+font-size:13px
+}
+
+.home-actions small{
+display:block;
+font-size:10px;
+opacity:.7;
+margin-top:3px
+}
+
+.home-footer{
+text-align:center;
+font-size:10px;
+opacity:.6;
+margin:15px 0 0
+}
+
+.streak-box{
+text-align:center;
+background:rgba(250,204,21,.16);
+border:1px solid rgba(250,204,21,.35);
+border-radius:18px;
+padding:12px;
+margin:10px 0
+}
+
+.streak-fire{
+font-size:30px
+}
+
+.streak-number{
+font-size:24px;
+font-weight:bold
+}
+
+.result-stars{
+font-size:35px;
+margin:8px
+}
+
+.result-score{
+font-size:30px;
+font-weight:bold;
+margin:8px
+}
+
+.result-message{
+font-size:15px;
+opacity:.9
+}
+
+.bonus{
+font-size:14px;
+margin-top:8px;
+color:#ffe066
+}
+
+@keyframes appear{
+from{opacity:0;transform:translateY(8px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes correct{
+50%{transform:scale(1.04)}
+}
+
+@keyframes wrong{
+25%{transform:translateX(-5px)}
+50%{transform:translateX(5px)}
+75%{transform:translateX(-3px)}
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-5px)}
+}
 </style>
 </head>
+
 <body>
+
 <div class="app">
-<header><h1>🦁 Défi Afrique +</h1><div>Le grand jeu de connaissances africaines 🌍</div></header>
+
+<header>
+<h1>🦁 Défi Afrique +</h1>
+<div>Le grand jeu de connaissances africaines 🌍</div>
+</header>
 
 <div id="home">
+
 <div class="hero">
-  <div class="hero-logo">🦁</div>
-  <h2>Bienvenue dans Défi Afrique +</h2>
-  <p>Teste tes connaissances et deviens un champion d'Afrique.</p>
-  <div class="hero-badge">🏆 APPRENDS • JOUE • PROGRESSE</div>
+<div class="hero-logo">🦁</div>
+<h2>Bienvenue dans Défi Afrique +</h2>
+<p>Teste tes connaissances et deviens un Champion d'Afrique.</p>
+<div class="hero-badge">🏆 APPRENDS • JOUE • PROGRESSE</div>
 </div>
 
 <div class="stats">
-<div class="stat"><span>🪙</span><b id="coins">0</b><small>Pièces</small></div>
-<div class="stat"><span>❤️</span><b id="lives">5</b><small>Vies</small></div>
-<div class="stat"><span>💡</span><b id="hints">0</b><small>Indices</small></div>
-<div class="stat"><span>🏆</span><b id="trophies">0</b><small>Trophées</small></div>
+
+<div class="stat">
+<span>🪙</span>
+<b id="coins">0</b>
+<small>Pièces</small>
+</div>
+
+<div class="stat">
+<span>❤️</span>
+<b id="lives">5</b>
+<small>Vies</small>
+</div>
+
+<div class="stat">
+<span>💡</span>
+<b id="hints">0</b>
+<small>Indices</small>
+</div>
+
+<div class="stat">
+<span>🏆</span>
+<b id="trophies">0</b>
+<small>Trophées</small>
+</div>
+
+</div>
+
+<div class="streak-box">
+<div class="streak-fire">🔥</div>
+<div>Série actuelle</div>
+<div class="streak-number" id="homeStreak">0</div>
+<div class="small">Bonnes réponses consécutives</div>
 </div>
 
 <div class="card center welcome-card">
-<h2>🔥 Prêt à relever le défi ?</h2>
-<p>Teste tes connaissances sur le Bénin et l'Afrique, gagne des récompenses et progresse.</p>
-<button class="main-start" onclick="startBenin()">🇧🇯 COMMENCER LE DÉFI</button>
 
-<div class="home-section-title">EXPLORE LE JEU</div>
+<h2>🔥 Prêt à relever le défi ?</h2>
+
+<p>
+Teste tes connaissances sur le Bénin et l'Afrique,
+gagne des récompenses et progresse.
+</p>
+
+<button class="main-start" onclick="startBenin()">
+🇧🇯 COMMENCER LE DÉFI
+</button>
+
+<div class="home-section-title">
+EXPLORE LE JEU
+</div>
+
 <div class="home-actions">
-<button onclick="show('tour')"><span>🌍</span><b>Tour d'Afrique</b><small>Découvre les pays</small></button>
-<button onclick="show('other')"><span>🧠</span><b>Autres défis</b><small>Teste ton intelligence</small></button>
+
+<button onclick="show('tour')">
+<span>🌍</span>
+<b>Tour d'Afrique</b>
+<small>Découvre les pays</small>
+</button>
+
+<button onclick="show('other')">
+<span>🧠</span>
+<b>Autres défis</b>
+<small>Teste ton intelligence</small>
+</button>
+
 </div>
 
 <div class="grid">
-<button onclick="show('missions')">🎯<br><b>Missions</b></button>
-<button onclick="show('shop')">🛒<br><b>Boutique</b></button>
-<button onclick="show('profile')">👤<br><b>Profil</b></button>
-<button onclick="show('ranking')">🏅<br><b>Classement</b></button>
+
+<button onclick="show('missions')">
+🎯<br><b>Missions</b>
+</button>
+
+<button onclick="show('shop')">
+🛒<br><b>Boutique</b>
+</button>
+
+<button onclick="show('profile')">
+👤<br><b>Profil</b>
+</button>
+
+<button onclick="show('ranking')">
+🏅<br><b>Classement</b>
+</button>
+
 </div>
+
 </div>
-<p class="home-footer">🌍 Ta connaissance de l'Afrique commence ici 🌍</p>
+
+<p class="home-footer">
+🌍 Ta connaissance de l'Afrique commence ici 🌍
+</p>
+
 </div>
+
 
 <div id="tour" class="hidden">
-<button class="secondary back" onclick="goHome()">← Accueil</button><div class="card"><h2>🌍 Tour d'Afrique</h2><p class="small">Il faut obtenir au moins 5/7 pour débloquer le pays suivant.</p><div id="countries"></div></div>
+
+<button class="secondary back" onclick="goHome()">
+← Accueil
+</button>
+
+<div class="card">
+
+<h2>🌍 Tour d'Afrique</h2>
+
+<p class="small">
+Il faut obtenir au moins 5/7 pour débloquer le pays suivant.
+</p>
+
+<div id="countries"></div>
+
 </div>
+
+</div>
+
 
 <div id="other" class="hidden">
-<button class="secondary back" onclick="goHome()">← Accueil</button><div class="card"><h2>🧠 Autres défis</h2><div id="categories"></div></div>
+
+<button class="secondary back" onclick="goHome()">
+← Accueil
+</button>
+
+<div class="card">
+
+<h2>🧠 Autres défis</h2>
+
+<div id="categories"></div>
+
 </div>
+
+</div>
+
 
 <div id="levels" class="hidden">
-<button class="secondary back" onclick="show('other')">← Défis</button><div class="card"><h2 id="levelsTitle"></h2><p class="small">Réussite : 5 bonnes réponses sur 7.</p><div id="levelsList"></div></div>
+
+<button class="secondary back" onclick="show('other')">
+← Défis
+</button>
+
+<div class="card">
+
+<h2 id="levelsTitle"></h2>
+
+<p class="small">
+Réussite : 5 bonnes réponses sur 7.
+</p>
+
+<div id="levelsList"></div>
+
 </div>
+
+</div>
+
 
 <div id="game" class="hidden">
-<button class="secondary back" onclick="quitGame()">✕ Quitter</button>
-<div class="card"><div class="small" id="gameInfo"></div><div class="progress"><div class="bar" id="bar"></div></div>
-<h2 id="question"></h2><div id="flag" class="flag"></div><div id="answers"></div><p class="center">⏱️ <b id="timer">15</b>s</p></div>
+
+<button class="secondary back" onclick="quitGame()">
+✕ Quitter
+</button>
+
+<div class="card">
+
+<div class="small" id="gameInfo"></div>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
 </div>
 
-<div id="result" class="hidden"><div class="card center"><h2 id="resultTitle"></h2><p id="resultText"></p><button onclick="replay()">🔄 Rejouer</button><button class="secondary" onclick="quitGame()">← Retour</button></div></div>
+<div class="streak-box">
 
-<div id="missions" class="hidden"><button class="secondary back" onclick="goHome()">← Accueil</button><div class="card"><h2>🎯 Missions</h2><p>📝 Répondre à une question : <b id="m1"></b></p><p>🏆 Gagner un défi : <b id="m2"></b></p><p>⭐ Atteindre 50 XP : <b id="m3"></b></p></div></div>
+🔥 Série :
+<b id="gameStreak">0</b>
 
-<div id="shop" class="hidden"><button class="secondary back" onclick="goHome()">← Accueil</button><div class="card"><h2>🛒 Boutique</h2><button onclick="buyLife()">❤️ Acheter 1 vie — 20 🪙</button><button onclick="buyHint()">💡 Acheter 1 indice — 15 🪙</button><button onclick="buyLives()">❤️❤️❤️ Acheter 3 vies — 50 🪙</button></div></div>
-
-<div id="profile" class="hidden"><button class="secondary back" onclick="goHome()">← Accueil</button><div class="card center"><h2>👤 Profil</h2><div style="font-size:60px" id="avatar">🧑🏾‍🎓</div><p>Niveau : <b id="level"></b></p><p>XP : <b id="xp"></b></p><p>Meilleure série : <b id="streak"></b></p><div class="grid"><button onclick="setAvatar('🧑🏾‍🎓')">🧑🏾‍🎓</button><button onclick="setAvatar('👩🏾‍🎓')">👩🏾‍🎓</button><button onclick="setAvatar('👨🏾‍💼')">👨🏾‍💼</button><button onclick="setAvatar('👩🏾‍💼')">👩🏾‍💼</button></div></div></div>
-
-<div id="ranking" class="hidden"><button class="secondary back" onclick="goHome()">← Accueil</button><div class="card"><h2>🏅 Classement</h2><p>1. 🦁 Toi — <b id="rankXp"></b> XP</p><p>2. 🌍 Joueur Afrique — 420 XP</p><p>3. ⭐ Champion — 350 XP</p><p class="small">Classement local de démonstration.</p></div></div>
 </div>
+
+<h2 id="question"></h2>
+
+<div id="flag" class="flag"></div>
+
+<div id="answers"></div>
+
+<p class="center">
+⏱️ <b id="timer">15</b>s
+</p>
+
+</div>
+
+</div>
+
+
+<div id="result" class="hidden">
+
+<div class="card center">
+
+<div class="result-stars" id="resultStars">
+🏆
+</div>
+
+<h2 id="resultTitle"></h2>
+
+<div class="result-score" id="resultScore"></div>
+
+<p class="result-message" id="resultText"></p>
+
+<div class="bonus" id="resultBonus"></div>
+
+<button onclick="replay()">
+🔄 REJOUER
+</button>
+
+<button class="secondary" onclick="quitGame()">
+← Retour
+</button>
+
+</div>
+
+</div>
+
+
+<div id="missions" class="hidden">
+
+<button class="secondary back" onclick="goHome()">
+← Accueil
+</button>
+
+<div class="card">
+
+<h2>🎯 Missions</h2>
+
+<p>
+📝 Répondre à une question :
+<b id="m1"></b>
+</p>
+
+<p>
+🏆 Gagner un défi :
+<b id="m2"></b>
+</p>
+
+<p>
+⭐ Atteindre 50 XP :
+<b id="m3"></b>
+</p>
+
+</div>
+
+</div>
+
+
+<div id="shop" class="hidden">
+
+<button class="secondary back" onclick="goHome()">
+← Accueil
+</button>
+
+<div class="card">
+
+<h2>🛒 Boutique</h2>
+
+<button onclick="buyLife()">
+❤️ Acheter 1 vie — 20 🪙
+</button>
+
+<button onclick="buyHint()">
+💡 Acheter 1 indice — 15 🪙
+</button>
+
+<button onclick="buyLives()">
+❤️❤️❤️ Acheter 3 vies — 50 🪙
+</button>
+
+</div>
+
+</div>
+
+
+<div id="profile" class="hidden">
+
+<button class="secondary back" onclick="goHome()">
+← Accueil
+</button>
+
+<div class="card center">
+
+<h2>👤 Profil</h2>
+
+<div style="font-size:60px" id="avatar">
+🧑🏾‍🎓
+</div>
+
+<p>
+Niveau :
+<b id="level"></b>
+</p>
+
+<p>
+XP :
+<b id="xp"></b>
+</p>
+
+<p>
+Meilleure série :
+<b id="streak"></b>
+</p>
+
+<div class="grid">
+
+<button onclick="setAvatar('🧑🏾‍🎓')">
+🧑🏾‍🎓
+</button>
+
+<button onclick="setAvatar('👩🏾‍🎓')">
+👩🏾‍🎓
+</button>
+
+<button onclick="setAvatar('👨🏾‍💼')">
+👨🏾‍💼
+</button>
+
+<button onclick="setAvatar('👩🏾‍💼')">
+👩🏾‍💼
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="ranking" class="hidden">
+
+<button class="secondary back" onclick="goHome()">
+← Accueil
+</button>
+
+<div class="card">
+
+<h2>🏅 Classement</h2>
+
+<p>
+1. 🦁 Toi — <b id="rankXp"></b> XP
+</p>
+
+<p>
+2. 🌍 Joueur Afrique — 420 XP
+</p>
+
+<p>
+3. ⭐ Champion — 350 XP
+</p>
+
+<p class="small">
+Classement local de démonstration.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 
 <script>
+
 const countries=[
-["🇩🇿","Algérie"],["🇦🇴","Angola"],["🇧🇯","Bénin"],["🇧🇼","Botswana"],["🇧🇫","Burkina Faso"],["🇧🇮","Burundi"],["🇨🇲","Cameroun"],["🇨🇻","Cap-Vert"],["🇨🇫","République centrafricaine"],["🇹🇩","Tchad"],["🇰🇲","Comores"],["🇨🇬","Congo"],["🇨🇩","RD Congo"],["🇨🇮","Côte d'Ivoire"],["🇩🇯","Djibouti"],["🇪🇬","Égypte"],["🇬🇶","Guinée équatoriale"],["🇪🇷","Érythrée"],["🇸🇿","Eswatini"],["🇪🇹","Éthiopie"],["🇬🇦","Gabon"],["🇬🇲","Gambie"],["🇬🇭","Ghana"],["🇬🇳","Guinée"],["🇬🇼","Guinée-Bissau"],["🇰🇪","Kenya"],["🇱🇸","Lesotho"],["🇱🇷","Liberia"],["🇱🇾","Libye"],["🇲🇬","Madagascar"],["🇲🇼","Malawi"],["🇲🇱","Mali"],["🇲🇷","Mauritanie"],["🇲🇺","Maurice"],["🇲🇦","Maroc"],["🇲🇿","Mozambique"],["🇳🇦","Namibie"],["🇳🇪","Niger"],["🇳🇬","Nigeria"],["🇷🇼","Rwanda"],["🇸🇹","Sao Tomé-et-Principe"],["🇸🇳","Sénégal"],["🇸🇨","Seychelles"],["🇸🇱","Sierra Leone"],["🇸🇴","Somalie"],["🇿🇦","Afrique du Sud"],["🇸🇸","Soudan du Sud"],["🇸🇩","Soudan"],["🇹🇿","Tanzanie"],["🇹🇬","Togo"],["🇹🇳","Tunisie"],["🇺🇬","Ouganda"],["🇿🇲","Zambie"],["🇿🇼","Zimbabwe"]
+
+["🇩🇿","Algérie"],
+["🇦🇴","Angola"],
+["🇧🇯","Bénin"],
+["🇧🇼","Botswana"],
+["🇧🇫","Burkina Faso"],
+["🇧🇮","Burundi"],
+["🇨🇲","Cameroun"],
+["🇨🇻","Cap-Vert"],
+["🇨🇫","République centrafricaine"],
+["🇹🇩","Tchad"],
+["🇰🇲","Comores"],
+["🇨🇬","Congo"],
+["🇨🇩","RD Congo"],
+["🇨🇮","Côte d'Ivoire"],
+["🇩🇯","Djibouti"],
+["🇪🇬","Égypte"],
+["🇬🇶","Guinée équatoriale"],
+["🇪🇷","Érythrée"],
+["🇸🇿","Eswatini"],
+["🇪🇹","Éthiopie"],
+["🇬🇦","Gabon"],
+["🇬🇲","Gambie"],
+["🇬🇭","Ghana"],
+["🇬🇳","Guinée"],
+["🇬🇼","Guinée-Bissau"],
+["🇰🇪","Kenya"],
+["🇱🇸","Lesotho"],
+["🇱🇷","Liberia"],
+["🇱🇾","Libye"],
+["🇲🇬","Madagascar"],
+["🇲🇼","Malawi"],
+["🇲🇱","Mali"],
+["🇲🇷","Mauritanie"],
+["🇲🇺","Maurice"],
+["🇲🇦","Maroc"],
+["🇲🇿","Mozambique"],
+["🇳🇦","Namibie"],
+["🇳🇪","Niger"],
+["🇳🇬","Nigeria"],
+["🇷🇼","Rwanda"],
+["🇸🇹","Sao Tomé-et-Principe"],
+["🇸🇳","Sénégal"],
+["🇸🇨","Seychelles"],
+["🇸🇱","Sierra Leone"],
+["🇸🇴","Somalie"],
+["🇿🇦","Afrique du Sud"],
+["🇸🇸","Soudan du Sud"],
+["🇸🇩","Soudan"],
+["🇹🇿","Tanzanie"],
+["🇹🇬","Togo"],
+["🇹🇳","Tunisie"],
+["🇺🇬","Ouganda"],
+["🇿🇲","Zambie"],
+["🇿🇼","Zimbabwe"]
+
 ];
+
+
 const qs={
+
 benin:[
+
 ["Quelle est la capitale du Bénin ?",["Porto-Novo","Cotonou","Abomey","Parakou"],0],
+
 ["Quelle ville est le siège du gouvernement béninois ?",["Cotonou","Porto-Novo","Ouidah","Natitingou"],0],
+
 ["Quelle est la monnaie du Bénin ?",["Franc CFA","Naira","Cedi","Dalasi"],0],
+
 ["Quel pays partage une frontière à l'ouest avec le Bénin ?",["Togo","Ghana","Niger","Cameroun"],0],
+
 ["Quel est l'un des parcs nationaux du Bénin ?",["Pendjari","Kruger","Serengeti","Etosha"],0],
+
 ["Quelle langue est officielle au Bénin ?",["Français","Anglais","Portugais","Arabe"],0],
+
 ["Quel est le nom du golfe au sud du Bénin ?",["Golfe de Guinée","Golfe d'Aden","Golfe du Mexique","Golfe de Gabès"],0]
+
 ],
+
 africa:[
+
 ["Quel est le plus grand pays d'Afrique par superficie ?",["Algérie","Nigeria","Égypte","Kenya"],0],
+
 ["Quel océan borde l'Afrique à l'ouest ?",["Atlantique","Pacifique","Arctique","Indien"],0],
+
 ["Quelle est la capitale du Ghana ?",["Accra","Kumasi","Lagos","Lomé"],0],
+
 ["Quel pays est le plus peuplé d'Afrique ?",["Nigeria","Égypte","Afrique du Sud","Éthiopie"],0],
+
 ["Dans quel pays se trouve le Kilimandjaro ?",["Tanzanie","Kenya","Ouganda","Rwanda"],0],
+
 ["Quelle langue est très largement utilisée en Afrique de l'Ouest ?",["Français","Japonais","Coréen","Russe"],0],
+
 ["Quel désert se trouve en Afrique du Nord ?",["Sahara","Gobi","Atacama","Kalahari"],0]
+
 ],
+
 intelligence:[
-["Suite : 2, 4, 6, 8, ?",["9","10","11","12"],1],["Si 3+5=8, 7+2=?",["8","9","10","11"],1],
-["Quel nombre manque : 5,10,15,20, ?",["22","24","25","30"],2],["Combien de côtés a un hexagone ?",["5","6","7","8"],1],
-["Quel est le double de 12 ?",["22","24","26","28"],1],["100 ÷ 10 = ?",["5","10","20","25"],1],
+
+["Suite : 2, 4, 6, 8, ?",["9","10","11","12"],1],
+
+["Si 3+5=8, 7+2=?",["8","9","10","11"],1],
+
+["Quel nombre manque : 5,10,15,20, ?",["22","24","25","30"],2],
+
+["Combien de côtés a un hexagone ?",["5","6","7","8"],1],
+
+["Quel est le double de 12 ?",["22","24","26","28"],1],
+
+["100 ÷ 10 = ?",["5","10","20","25"],1],
+
 ["Si aujourd'hui est lundi, demain est ?",["Dimanche","Mardi","Mercredi","Jeudi"],1]
+
 ],
+
 pays:[
-["Quel pays a pour capitale Abuja ?",["Ghana","Nigeria","Niger","Bénin"],1],["Quel pays a pour capitale Lomé ?",["Togo","Gabon","Mali","Ghana"],0],
-["Quel pays a pour capitale Dakar ?",["Sénégal","Guinée","Mali","Niger"],0],["Quel pays a pour capitale Accra ?",["Ghana","Togo","Nigeria","Bénin"],0],
-["Quel pays a pour capitale Bamako ?",["Mali","Niger","Tchad","Burkina Faso"],0],["Quel pays a pour capitale Niamey ?",["Niger","Mali","Nigeria","Togo"],0],
+
+["Quel pays a pour capitale Abuja ?",["Ghana","Nigeria","Niger","Bénin"],1],
+
+["Quel pays a pour capitale Lomé ?",["Togo","Gabon","Mali","Ghana"],0],
+
+["Quel pays a pour capitale Dakar ?",["Sénégal","Guinée","Mali","Niger"],0],
+
+["Quel pays a pour capitale Accra ?",["Ghana","Togo","Nigeria","Bénin"],0],
+
+["Quel pays a pour capitale Bamako ?",["Mali","Niger","Tchad","Burkina Faso"],0],
+
+["Quel pays a pour capitale Niamey ?",["Niger","Mali","Nigeria","Togo"],0],
+
 ["Quel pays a pour capitale Kigali ?",["Rwanda","Burundi","Kenya","Ouganda"],0]
+
 ],
+
 capitales:[
-["Quelle est la capitale du Togo ?",["Lomé","Accra","Cotonou","Bamako"],0],["Quelle est la capitale du Nigeria ?",["Abuja","Lagos","Kano","Ibadan"],0],
-["Quelle est la capitale du Sénégal ?",["Dakar","Thiès","Saint-Louis","Kaolack"],0],["Quelle est la capitale du Mali ?",["Bamako","Sikasso","Mopti","Gao"],0],
-["Quelle est la capitale du Niger ?",["Niamey","Agadez","Maradi","Zinder"],0],["Quelle est la capitale du Rwanda ?",["Kigali","Butare","Gisenyi","Musanze"],0],
+
+["Quelle est la capitale du Togo ?",["Lomé","Accra","Cotonou","Bamako"],0],
+
+["Quelle est la capitale du Nigeria ?",["Abuja","Lagos","Kano","Ibadan"],0],
+
+["Quelle est la capitale du Sénégal ?",["Dakar","Thiès","Saint-Louis","Kaolack"],0],
+
+["Quelle est la capitale du Mali ?",["Bamako","Sikasso","Mopti","Gao"],0],
+
+["Quelle est la capitale du Niger ?",["Niamey","Agadez","Maradi","Zinder"],0],
+
+["Quelle est la capitale du Rwanda ?",["Kigali","Butare","Gisenyi","Musanze"],0],
+
 ["Quelle est la capitale du Ghana ?",["Accra","Kumasi","Tamale","Cape Coast"],0]
+
 ],
+
 culture:[
-["Le vodun est particulièrement associé à quel pays ?",["Bénin","Kenya","Égypte","Maroc"],0],["Le djembé est un instrument traditionnel surtout connu en ?",["Afrique de l'Ouest","Afrique australe","Afrique du Nord","Afrique de l'Est"],0],
-["Le pagne est notamment utilisé pour fabriquer ?",["Des vêtements","Des voitures","Des téléphones","Des ordinateurs"],0],["Le tam-tam est un instrument de ?",["Percussion","Vent","Clavier","Cordes"],0],
-["Quel aliment est très présent dans de nombreuses cuisines ouest-africaines ?",["Maïs","Pomme uniquement","Riz uniquement","Blé uniquement"],0],["Le griot est traditionnellement associé à la transmission de ?",["Histoires et traditions","Météo","Mathématiques uniquement","Médecine moderne uniquement"],0],
+
+["Le vodun est particulièrement associé à quel pays ?",["Bénin","Kenya","Égypte","Maroc"],0],
+
+["Le djembé est un instrument traditionnel surtout connu en ?",["Afrique de l'Ouest","Afrique australe","Afrique du Nord","Afrique de l'Est"],0],
+
+["Le pagne est notamment utilisé pour fabriquer ?",["Des vêtements","Des voitures","Des téléphones","Des ordinateurs"],0],
+
+["Le tam-tam est un instrument de ?",["Percussion","Vent","Clavier","Cordes"],0],
+
+["Quel aliment est très présent dans de nombreuses cuisines ouest-africaines ?",["Maïs","Pomme uniquement","Riz uniquement","Blé uniquement"],0],
+
+["Le griot est traditionnellement associé à la transmission de ?",["Histoires et traditions","Météo","Mathématiques uniquement","Médecine moderne uniquement"],0],
+
 ["Quelle danse est une tradition culturelle dans plusieurs régions africaines ?",["Danses traditionnelles","Ballet sur glace","Flamenco uniquement","Kabuki uniquement"],0]
-]};
-let state=JSON.parse(localStorage.getItem("defiAfriqueState")||"null")||{coins:0,lives:5,hints:0,trophies:0,xp:0,level:1,bestStreak:0,avatar:"🧑🏾‍🎓",unlocked:1,completed:[],challengeLevels:{africa:1,intelligence:1,drapeaux:1,pays:1,capitales:1,culture:1},challengeCompleted:{africa:[],intelligence:[],drapeaux:[],pays:[],capitales:[],culture:[]},missions:{q:false,win:false,xp:false}};
-let currentQuestions=[],currentIndex=0,currentScore=0,currentCategory="",currentLevel=1,currentCountry=0,timer=null,timeLeft=15,answered=false;
-function save(){localStorage.setItem("defiAfriqueState",JSON.stringify(state));updateUI()}
-function updateUI(){["coins","lives","hints","trophies"].forEach(x=>document.getElementById(x).textContent=state[x]);document.getElementById("level").textContent=state.level;document.getElementById("xp").textContent=state.xp;document.getElementById("streak").textContent=state.bestStreak;document.getElementById("avatar").textContent=state.avatar;document.getElementById("rankXp").textContent=state.xp+" XP";document.getElementById("m1").textContent=state.missions.q?"✅":"⬜";document.getElementById("m2").textContent=state.missions.win?"✅":"⬜";document.getElementById("m3").textContent=state.missions.xp?"✅":"⬜"}
-function hideAll(){document.querySelectorAll(".app>div[id]").forEach(x=>x.classList.add("hidden"))}
-function show(id){hideAll();document.getElementById(id).classList.remove("hidden");if(id==="tour")renderCountries();if(id==="other")renderCategories();if(id==="missions"||id==="profile"||id==="ranking")updateUI()}
-function goHome(){show("home")}
-function renderCountries(){let h="";countries.forEach((c,i)=>{let open=i<state.unlocked;h+=`<div class="country"><span>${c[0]} <b>${i+1}. ${c[1]}</b></span><button ${open?"":"disabled"} onclick="startCountry(${i})">${open?"Jouer":"🔒"}</button></div>`});document.getElementById("countries").innerHTML=h}
-function renderCategories(){let cats=[["africa","🌍 Défi Afrique"],["intelligence","🧠 Intelligence"],["drapeaux","🚩 Drapeaux"],["pays","🗺️ Pays"],["capitales","🏛️ Capitales"],["culture","🎭 Culture"]];document.getElementById("categories").innerHTML=cats.map(c=>`<button onclick="openLevels('${c[0]}')">${c[1]}</button>`).join("")}
-function openLevels(cat){currentCategory=cat;document.getElementById("levelsTitle").textContent=cat==="africa"?"🌍 Défi Afrique":cat==="drapeaux"?"🚩 Drapeaux":cat==="intelligence"?"🧠 Intelligence":cat==="pays"?"🗺️ Pays":cat==="capitales"?"🏛️ Capitales":"🎭 Culture";let unlocked=state.challengeLevels[cat]||1;let h="";for(let i=1;i<=10;i++)h+=`<div class="level"><b>Niveau ${i}</b><button ${i<=unlocked?"":"disabled"} onclick="startChallenge('${cat}',${i})">${i<=unlocked?"Jouer":"🔒"}</button></div>`;document.getElementById("levelsList").innerHTML=h;show("levels")}
-function startBenin(){startQuestions("benin",qs.benin,0,1)}
-function startCountry(i){startQuestions("tour",makeCountryQuestions(i),i,1)}
-function makeCountryQuestions(i){let c=countries[i];return [[`Quel pays correspond au drapeau ${c[0]} ?`,[c[1],"Ghana","Maroc","Kenya"],0],[`Quelle est la capitale de ${c[1]} ?`,["Capitale nationale","Une autre ville","Une ville voisine","Aucune"],0],["Ce pays se trouve-t-il en Afrique ?",["Oui","Non","Europe","Asie"],0],["Lequel est un continent ?",["Afrique","Bénin","Sénégal","Nigeria"],0],["Quel océan borde une partie de l'Afrique ?",["Atlantique","Pacifique uniquement","Arctique uniquement","Aucun"],0],["Combien de pays africains environ ?",["54","20","100","12"],0],["Lequel est un symbole fréquent de l'Afrique ?",["🌍","🏔️","🗽","🗼"],0]]}
-function startChallenge(cat,lvl){if(lvl>(state.challengeLevels[cat]||1))return;if(cat==="drapeaux"){let arr=[];for(let i=0;i<7;i++){let n=Math.floor(Math.random()*countries.length),c=countries[n],opts=[c[1],"Bénin","Ghana","Maroc"];opts=[...new Set(opts)].sort(()=>Math.random()-.5);arr.push([`Quel pays possède ce drapeau ?`,opts,opts.indexOf(c[1])]);}startQuestions(cat,arr,0,lvl)}else{let base=qs[cat]||qs.africa;startQuestions(cat,base.slice().sort(()=>Math.random()-.5),0,lvl)}}
-function startQuestions(cat,questions,country,lvl){currentCategory=cat;currentQuestions=questions.slice(0,7);currentIndex=0;currentScore=0;currentCountry=country;currentLevel=lvl;show("game");loadQuestion()}
-function loadQuestion(){if(currentIndex>=currentQuestions.length)return finish();answered=false;let q=currentQuestions[currentIndex];document.getElementById("gameInfo").textContent=`Question ${currentIndex+1}/7 — ${currentScore} bonne(s)`;document.getElementById("bar").style.width=((currentIndex)/7*100)+"%";document.getElementById("question").textContent=q[0];document.getElementById("flag").textContent=(currentCategory==="drapeaux"&&q[2]!==undefined)?guessFlag(q):"";document.getElementById("answers").innerHTML=q[1].map((a,i)=>`<button class="answer" onclick="answer(${i})">${a}</button>`).join("");startTimer()}
-function guessFlag(q){return "🚩"}
-function startTimer(){clearInterval(timer);timeLeft=15;document.getElementById("timer").textContent=timeLeft;timer=setInterval(()=>{timeLeft--;document.getElementById("timer").textContent=timeLeft;if(timeLeft<=0){clearInterval(timer);answer(-1)}},1000)}
-function answer(i){if(answered)return;answered=true;clearInterval(timer);let q=currentQuestions[currentIndex],buttons=document.querySelectorAll(".answer");buttons.forEach((b,j)=>{if(j===q[2])b.classList.add("correct");if(j===i&&i!==q[2])b.classList.add("wrong")});if(i===q[2]){currentScore++;state.coins+=5;state.xp+=10;state.missions.q=true}else state.lives=Math.max(0,state.lives-1);save();setTimeout(()=>{currentIndex++;loadQuestion()},650)}
-function finish(){clearInterval(timer);let success=currentScore>=5;if(success){state.trophies++;state.coins+=20;state.xp+=40;state.missions.win=true;if(currentCategory==="tour"){state.completed=[...new Set([...state.completed,currentCountry])];state.unlocked=Math.max(state.unlocked,Math.min(countries.length,currentCountry+2))}else if(state.challengeLevels[currentCategory]){state.challengeCompleted[currentCategory]=[...new Set([...state.challengeCompleted[currentCategory],currentLevel])];state.challengeLevels[currentCategory]=Math.min(10,Math.max(state.challengeLevels[currentCategory],currentLevel+1))}}if(state.xp>=50)state.missions.xp=true;state.level=Math.floor(state.xp/100)+1;save();document.getElementById("resultTitle").textContent=success?"🎉 Défi réussi !":"💪 Continue !";document.getElementById("resultText").textContent=`Score : ${currentScore}/7${success?" — Nouveau niveau débloqué !":" — Il faut au moins 5/7."}`;show("result")}
-function replay(){if(currentCategory==="benin")startBenin();else if(currentCategory==="tour")startCountry(currentCountry);else startChallenge(currentCategory,currentLevel)}
-function quitGame(){if(currentCategory==="tour")show("tour");else if(["africa","intelligence","drapeaux","pays","capitales","culture"].includes(currentCategory))openLevels(currentCategory);else goHome()}
-function buyLife(){if(state.coins>=20){state.coins-=20;state.lives++;save()}else alert("Pas assez de pièces.");}
-function buyHint(){if(state.coins>=15){state.coins-=15;state.hints++;save()}else alert("Pas assez de pièces.");}
-function buyLives(){if(state.coins>=50){state.coins-=50;state.lives+=3;save()}else alert("Pas assez de pièces.");}
-function setAvatar(a){state.avatar=a;save()}
-updateUI();window.show = show;
-window.goHome = goHome;
-window.startBenin = startBenin;
-window.startCountry = startCountry;
-window.startChallenge = startChallenge;
-window.openLevels = openLevels;
-window.answer = answer;
-window.replay = replay;
-window.quitGame = quitGame;
-window.buyLife = buyLife;
-window.buyHint = buyHint;
-window.buyLives = buyLives;
-window.setAvatar = setAvatar;
-</script>
-</body>
-</html>
+
+]
+
+};
+
+
+let state=JSON.parse(localStorage.getItem("defiAfriqueState")||"null")||{
+
+coins:0,
+lives:5,
+hints:0,
+trophies:0,
+xp:0,
+level:1,
+bestStreak:0,
+avatar:"🧑🏾‍🎓",
+unlocked:1,
+completed:[],
+challengeLevels:{
+africa:1,
+intelligence:1,
+drapeaux:1,
+pays:1,
+capitales:1,
+culture:1
+},
+challengeCompleted:{
+africa:[],
+intelligence:[],
+drapeaux:[],
+pays:[],
+capitales:[],
+culture:[]
+},
+missions:{
+q:false,
+win:false,
+xp:false
+}
+
+};
+
+
+let currentQuestions=[];
+let currentIndex=0;
+let currentScore=0;
+let currentCategory="";
+let currentLevel=1;
+let currentCountry=0;
+let timer=null;
+let timeLeft=15;
+let answered=false;
+let currentStreak=0;
+
+
+function save(){
+
+localStorage.setItem(
+"defiAfriqueState",
+JSON.stringify(state)
+);
+
+updateUI();
+
+}
+
+
+function updateUI(){
+
+["coins","lives","hints","trophies"].forEach(x=>{
+document.getElementById(x).textContent=state[x]
+});
+
+document.getElementById("level").textContent=state.level;
+
+document.getElementById("xp").textContent=state.xp+" XP";
+
+document.getElementById("streak").textContent=state.bestStreak;
+
+document.getElementById("homeStreak").textContent=currentStreak;
+
+document.getElementById("gameStreak").textContent=currentStreak;
+
+document.getElementById("avatar").textContent=state.avatar;
+
+document.getElementById("rankXp").textContent=state.xp+" XP";
+
+document.getElementById("m1").textContent=state.missions.q?"✅":"⬜";
+
+document.getElementById("m2").textContent=state.missions.win?"✅":"⬜";
+
+document.getElementById("m3").textContent=state.missions.xp?"✅":"⬜";
+
+}
+
+
+function hideAll(){
+
+document.querySelectorAll(".app>div[id]").forEach(x=>{
+x.classList.add("hidden")
+});
+
+}
+
+
+function show(id){
+
+hideAll();
+
+document.getElementById(id).classList.remove("hidden");
+
+if(id==="tour")renderCountries();
+
+if(id==="other")renderCategories();
+
+if(id==="missions"||id==="profile"||id==="ranking")
+updateUI();
+
+}
+
+
+function goHome(){
+
+show("home");
+
+}
+
+
+function renderCountries(){
+
+let h="";
+
+countries.forEach((c,i)=>{
+
+let open=i<state.unlocked;
+
+h+=`
+
+<div class="country">
+
+<span>
+${c[0]} <b>${i+1}. ${c[1]}</b>
+</span>
+
+<button ${open?"":"disabled"}
+onclick="startCountry(${i})">
+
+${open?"Jouer":"🔒"}
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("countries").innerHTML=h;
+
+}
+
+
+function renderCategories(){
+
+let cats=[
+
+["africa","🌍 Défi Afrique"],
+
+["intelligence","🧠 Intelligence"],
+
+["drapeaux","🚩 Drapeaux"],
+
+["pays","🗺️ Pays"],
+
+["capitales","🏛️ Capitales"],
+
+["culture","🎭 Culture"]
+
+];
+
+document.getElementById("categories").innerHTML=
+
+cats.map(c=>
+
+`<button onclick="openLevels('${c[0]}')">
+${c[1]}
+</button>`
+
+).join("");
+
+}
+
+
+function openLevels(cat){
+
+currentCategory=cat;
+
+document.getElementById("levelsTitle").textContent=
+
+cat==="africa"?"🌍 Défi Afrique":
+cat==="drapeaux"?"🚩 Drapeaux":
+cat==="intelligence"?"🧠 Intelligence":
+cat==="pays"?"🗺️ Pays":
+cat==="capitales"?"🏛️ Capitales":
+"🎭 Culture";
+
+let unlocked=state.challengeLevels[cat]||1;
+
+let h="";
+
+for(let i=1;i<=10;i++){
+
+h+=`
+
+<div class="level">
+
+<b>Niveau ${i}</b>
+
+<button ${i<=unlocked?"":"disabled"}
+onclick="startChallenge('${cat}',${i})">
+
+${i<=unlocked?"Jouer":"🔒"}
+
+</button>
+
+</div>
+
+`;
+
+}
+
+document.getElementById("levelsList").innerHTML=h;
+
+show("levels");
+
+}
+
+
+function startBenin(){
+
+startQuestions("benin",qs.benin,0,1);
+
+}
+
+
+function startCountry(i){
+
+startQuestions("tour",makeCountryQuestions(i),i,1);
+
+}
+
+
+function makeCountryQuestions(i){
+
+let c=countries[i];
+
+return [
+
+[`Quel pays correspond au drapeau ${c[0]} ?`,
+[c[1],"Ghana","Maroc","Kenya"],0],
+
+[`Quelle est la capitale de ${c[1]} ?`,
+["Capitale nationale","Une autre ville","Une ville voisine","Aucune"],0],
+
+["Ce pays se trouve-t-il en Afrique ?",
+["Oui","Non","Europe","Asie"],0],
+
+["Lequel est un continent ?",
+["Afrique","Bénin","Sénégal","Nigeria"],0],
+
+["Quel océan borde une partie de l'Afrique ?",
+["Atlantique","Pacifique uniquement","Arctique uniquement","Aucun"],0],
+
+["Combien de pays africains environ ?",
+["54","20","100","12"],0],
+
+["Lequel est un symbole fréquent de l'Afrique ?",
+["🌍","🏔️","🗽","🗼"],0]
+
+];
+
+}
+
+
+function startChallenge(cat,lvl){
+
+if(lvl>(state.challengeLevels[cat]||1))
+return;
+
+if(cat==="drapeaux"){
+
+let arr=[];
+
+for(let i=0;i<7;i++){
+
+let n=Math.floor(Math.random()*countries.length);
+
+let c=countries[n];
+
+let opts=[c[1],"Bénin","Ghana","Maroc"];
+
+opts=[...new Set(opts)]
+.sort(()=>Math.random()-.5);
+
+arr.push([
+"Quel pays possède ce drapeau ?",
+opts,
+opts.indexOf(c[1])
+]);
+
+}
+
+startQuestions(cat,arr,0,lvl);
+
+}
+
+else{
+
+let base=qs[cat]||qs.africa;
+
+startQuestions(
+cat,
+base.slice().sort(()=>Math.random()-.5),
+0,
+lvl
+);
+
+}
+
+}
+
+
+function startQuestions(cat,questions,country,lvl){
+
+currentCategory=cat;
+
+currentQuestions=questions.slice(0,7);
+
+currentIndex=0;
+
+currentScore=0;
+
+currentCountry=country;
+
+currentLevel=lvl;
+
+currentStreak=0;
+
+show("game");
+
+loadQuestion();
+
+}
+
+
+function loadQuestion(){
+
+if(currentIndex>=currentQuestions.length){
+
+return finish();
+
+}
+
+answered=false;
+
+let q=currentQuestions[currentIndex];
+
+document.getElementById("gameInfo").textContent=
+`Question ${currentIndex+1}/7 — ${currentScore} bonne(s)`;
+
+document.getElementById("bar").style.width=
+((currentIndex)/7*100)+"%";
+
+document.getElementById("question").textContent=q[0];
+
+document.getElementById("flag").textContent=
+(currentCategory==="drapeaux")?"🚩":"";
+
+document.getElementById("answers").innerHTML=
+
+q[1].map((a,i)=>
+
+`<button class="answer"
+onclick="answer(${i})">
+${a}
+</button>`
+
+).join("");
+
+updateUI();
+
+startTimer();
+
+}
+
+
+function startTimer(){
+
+clearInterval(timer);
+
+timeLeft=15;
+
+document.getElementById("timer").textContent=timeLeft;
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer").textContent=timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+answer(-1);
+
+}
+
+},1000);
+
+}
+
+
+function playSound(type){
+
+try{
+
+let AudioContext=
+window.AudioContext||window.webkitAudioContext;
+
+let ctx=new AudioContext();
+
+let osc=ctx.createOscillator();
+
+let gain=ctx.createGain();
+
+osc.connect(gain);
+
+gain.connect(ctx.destination);
+
+if(type==="correct"){
+
+osc.frequency.value=700;
+
+gain.gain.value=.08;
+
+}
+
+else if(type==="wrong"){
+
+osc.frequency.value=180;
+
+gain.gain.value=.08;
+
+}
+
+else{
+
+osc.frequency.value=900;
+
+gain.gain.value=.1;
+
+}
+
+osc.start();
+
+osc.stop(ctx.currentTime+.12);
+
+}catch(e){}
+
+}
+
+
+function answer(i){
+
+if(answered)return;
+
+answered=true;
+
+clearInterval(timer);
+
+let q=currentQuestions[currentIndex];
+
+let buttons=document.querySelectorAll(".answer");
+
+buttons.forEach((b,j)=>{
+
+if(j===q[2])
+b.classList.add("correct");
+
+if(j===i&&i!==q[2])
+b.classList.add("wrong");
+
+});
+
+if(i===q[2]){
+
+currentScore++;
+
+currentStreak++;
+
+state.coins+=5;
+
+state.xp+=10;
+
+state.missions.q=true;
+
+if(currentStreak>state.bestStreak)
+state.bestStreak=currentStreak;
+
+if(currentStreak>=3){
+
+let bonus=5*currentStreak;
+
+state.coins+=bonus;
+
+}
+
+playSound("correct");
+
+}
+
+else{
+
+currentStreak=0;
+
+state.lives=Math.max(0,state.lives-1);
+
+playSound("wrong");
+
+}
+
+save();
+
+setTimeout(()=>{
+
+currentIndex++;
+
+loadQuestion();
+
+},650);
+
+}
+
+
+function finish(){
+
+clearInterval(timer);
+
+let success=currentScore>=5;
+
+let bonus=0;
+
+if(success){
+
+state.trophies++;
+
+state.coins+=20;
+
+state.xp+=40;
+
+state.missions.win=true;
+
+bonus=20;
+
+if(currentStreak>=3){
+
+bonus+=currentStreak*5;
+
+state.coins+=currentStreak*5;
+
+}
+
+if(currentCategory==="tour"){
+
+state.completed=[
+...new Set([
+...state.completed,
+currentCountry
+])
+];
+
+state.unlocked=Math.max(
+state.unlocked,
+Math.min(
+countries.length,
+currentCountry+2
+)
+);
+
+}
+
+else if(state
